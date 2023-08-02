@@ -13,12 +13,11 @@ jobs:
           - name: Run the build process with Docker
             uses: addnab/docker-run-action@v3
             with:
-                image: aschmelyun/cleaver:latest
-                options: -v ${{ github.workspace }}:/var/www
+                image: ppiper/cf-cli                
                 run: |
                     composer install
-                    npm install
-                    npm run production
+                    npm install                    
+                    docker build -t ppiper/cf-cli
       # credentials:
       #   username: ${{ github.actor }}
       #   password: ${{ secrets.github_token }}
