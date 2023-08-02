@@ -12,7 +12,9 @@ jobs:
           run: |
             docker pull ppiper/cf-cli:latest
             docker run ppiper/cf-cli cf -v
+            debian run debian:11
             docker images
+            cf -v
         
                    
 
