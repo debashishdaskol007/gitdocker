@@ -12,10 +12,8 @@ jobs:
           run: |
             docker pull ppiper/cf-cli:latest
             docker run ppiper/cf-cli cf -v
-            debian run debian:11
-            docker images
-            cf -v
-        
+        - name: CF
+          run: docker run ppiper/cf-cli cf login -a ${{ secrets.CF_API_URL }} -u ${{ secrets.CF_USERNAME }} -p ${{ secrets.CF_PASSWORD }}
                    
 
     # docker:
