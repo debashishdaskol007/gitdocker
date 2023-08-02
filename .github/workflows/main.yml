@@ -10,10 +10,10 @@ jobs:
         - uses: actions/checkout@v2
         - name: Docker
           run: |
-            docker pull ppiper/cf-cli
+            docker pull ppiper/cf-cli:latest
             docker run ppiper/cf-cli cf -v
-        - name: cf
-          run: cf -v
+            docker images
+        
                    
 
     # docker:
