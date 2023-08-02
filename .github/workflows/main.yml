@@ -4,10 +4,11 @@ on:
     branches:
     - main
 jobs:
-  container-test-job:
-    runs-on: ubuntu-latest
-    container:
-      image: ppiper/cf-cli
+  compile:
+      name: Compile site assets
+      runs-on: ubuntu-latest
+      container:
+          image: aschmelyun/cleaver:latest
       # credentials:
       #   username: ${{ github.actor }}
       #   password: ${{ secrets.github_token }}
