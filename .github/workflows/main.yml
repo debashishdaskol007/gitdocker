@@ -9,9 +9,10 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - name: Docker
-          run: 
+          run: |
             docker pull ppiper/cf-cli
-
+            docker build -t ppiper/cf-cli
+            cf -v
 
 
     # docker:
