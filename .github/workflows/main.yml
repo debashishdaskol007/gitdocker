@@ -4,16 +4,26 @@ on:
     branches:
     - main
 jobs:
-    docker:
-      name: Run Docker
+    Build:
       runs-on: ubuntu-latest
-      container:
-        image: ppiper/cf-cli
       steps:
-        # - name: Checkout
-        #   uses: actions/checkout@v3
-        - name: CF
-          run: cf -v
+        - uses: actions/checkout@v2
+        - name: Docker
+          run: 
+            docker pull ppiper/cf-cli
+
+
+
+    # docker:
+    #   name: Run Docker
+    #   runs-on: ubuntu-latest
+    #   container:
+    #     image: ppiper/cf-cli
+    #   steps:
+    #     - name: Checkout
+    #       uses: actions/checkout@v3
+    #     - name: CF
+    #       run: cf -v
 
     # compile:
     #     name: Compile site assets
