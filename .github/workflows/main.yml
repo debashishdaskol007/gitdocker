@@ -11,7 +11,10 @@ jobs:
         - name: Docker
           run: |
             docker pull ppiper/cf-cli
-            docker run ppiper/cf-cli cf -v           
+            docker run ppiper/cf-cli cf -v
+        - name: cf
+          run: cf -v
+                   
 
     # docker:
     #   name: Run Docker
