@@ -4,20 +4,25 @@ on:
     branches:
     - main
 jobs:
-    compile:
-        name: Compile site assets
-        runs-on: ubuntu-latest
-        steps:
-          - name: Check out the repo
-            uses: actions/checkout@v2
-          - name: Run the build process with Docker
-            uses: addnab/docker-run-action@v3
-            with:
-                image: ppiper/cf-cli                
-                run: |
-                    composer install
-                    npm install                    
-                    docker build -t ppiper/cf-cli
+    docker:
+      name: Run Docker
+      runs-on: ubuntu-latest
+      container:
+        image: ppiper:cf-cli
+    # compile:
+    #     name: Compile site assets
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #       - name: Check out the repo
+    #         uses: actions/checkout@v2
+    #       - name: Run the build process with Docker
+    #         uses: addnab/docker-run-action@v3
+    #         with:
+    #             image: ppiper/cf-cli                
+    #             run: |
+    #                 composer install
+    #                 npm install                    
+    #                 docker build -t ppiper/cf-cli
       # credentials:
       #   username: ${{ github.actor }}
       #   password: ${{ secrets.github_token }}
