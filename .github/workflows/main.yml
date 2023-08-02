@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ppiper/cf-cli
-      credentials:
-          CX_INFRA_IT_CF_USERNAME: ${{ secrets.CF_USERNAME }}
-          CX_INFRA_IT_CF_PASSWORD: ${{ secrets.CF_PASSWORD }} 
+      # credentials:
+      #   username: ${{ github.actor }}
+      #   password: ${{ secrets.github_token }}
 
 
   # build:
