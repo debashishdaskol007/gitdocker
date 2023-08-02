@@ -9,6 +9,9 @@ jobs:
       runs-on: ubuntu-latest
       container:
         image: ppiper:cf-cli
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v2
     # compile:
     #     name: Compile site assets
     #     runs-on: ubuntu-latest
