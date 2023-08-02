@@ -4,11 +4,12 @@ on:
     branches:
     - main
 jobs:
-  compile:
-      name: Compile site assets
-      runs-on: ubuntu-latest
-      container:
-          image: aschmelyun/cleaver:latest
+    compile:
+        name: Compile site assets
+        runs-on: ubuntu-latest
+        steps:
+          - name: Run the build process with Docker
+            uses: docker://aschmelyun/cleaver
       # credentials:
       #   username: ${{ github.actor }}
       #   password: ${{ secrets.github_token }}
